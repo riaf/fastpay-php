@@ -69,6 +69,7 @@ class ResponseHandler
                 foreach ($object['data'] as $v) {
                     $lists[] = $this->convertFastPayObject($v);
                 }
+
                 return $lists;
             }
 
@@ -82,9 +83,11 @@ class ResponseHandler
                 if (in_array($className, $fastpayObjects)) {
                     return new $className($object);
                 }
+
                 return new $className($this->client, $object);
             }
         }
+
         return $object;
     }
 

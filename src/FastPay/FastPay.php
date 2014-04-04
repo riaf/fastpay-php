@@ -45,12 +45,14 @@ class FastPay
     public function setUrl($url)
     {
         $this->client->setBaseUrl($url);
+
         return $this;
     }
 
     public function setSecret($secret)
     {
         $this->client->setDefaultOption('auth', array($secret, '', 'Basic'));
+
         return $this;
     }
 
@@ -58,6 +60,7 @@ class FastPay
     {
         $this->apiVersion = $apiVersion;
         $this->setupClient();
+
         return $this;
     }
 
